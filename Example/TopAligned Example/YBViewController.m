@@ -32,9 +32,8 @@ static NSString *CellIdentifier = @"CellIdentifier";
     self.items = @[@"This is a very long name to show the value", @"John Doe", @"Max van Gelderen", @"Mr. T", @"This subclass is useful for long names", @"Sir Alex Ferguson"];
     
     // UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    YBTopAlignedCollectionViewFlowLayout *layout = [YBTopAlignedCollectionViewFlowLayout new];
+    YBTopAlignedCollectionViewFlowLayout *layout = [[YBTopAlignedCollectionViewFlowLayout alloc] initWithNumColumns:3];
     layout.delegate = self;
-    layout.numColumns = 3;
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;

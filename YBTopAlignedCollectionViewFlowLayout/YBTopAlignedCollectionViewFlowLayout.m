@@ -16,8 +16,22 @@
 
 @implementation YBTopAlignedCollectionViewFlowLayout
 
+- (instancetype)initWithNumColumns:(int)numColumns {
+    self = [super init];
+    
+    if (self) {
+        self.numColumns = numColumns;
+    }
+    
+    return self;
+}
+
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
 {
+    if (!self.numColumns || self.numColumns == 0) {
+        NSLog(@"%@: numColumns not set. Application will crash.", NSStringFromClass([self class]));
+    }
+    
     NSArray *attributesToReturn = [super layoutAttributesForElementsInRect:rect];
     for (UICollectionViewLayoutAttributes *attributes in attributesToReturn)
     {

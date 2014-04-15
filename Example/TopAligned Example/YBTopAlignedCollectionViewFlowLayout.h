@@ -13,4 +13,6 @@
 @property (nonatomic, assign) id <UICollectionViewDelegateFlowLayout> delegate;
 @property int numColumns;
 
+- (instancetype)initWithNumColumns:(int)numColumns;
+
 @end
