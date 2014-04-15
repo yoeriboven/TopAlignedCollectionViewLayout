@@ -11,6 +11,31 @@ If items on a row have different heights, the row will get the same height as th
 
 Using YBTopAlignedCollectionViewFlowLayout is very easy:
 
-1. **Add it to your project**. Either download the files or use the pod.
-2. Create an object, set the numColumns-property and assign the object to the collectionView.
-3. **Implement the two delegate methods:** `- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath` and `- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section`.
+Add the pod `YBTopAlignedCollectionViewFlowLayout` (not available yet) to your Podfile or manually download the files and add them to your project.
+
+```objc
+#import "YBTopAlignedCollectionViewFlowLayout.h"
+```
+
+Now where you would create the `UICollectionViewFlowLayout` do this:
+
+```objc
+YBTopAlignedCollectionViewFlowLayout *layout = [[YBTopAlignedCollectionViewFlowLayout alloc] initWithNumColumns:3];
+layout.delegate = self;
+```
+
+Don't forget to implement the delegate.
+```objc
+@interface MyViewController : UIViewController <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+```
+
+## Requirements
+`YBTopAlignedCollectionViewFlowLayout` requires iOS 6.0 or greater.
+
+The example project only works with iOS 7
+
+## License
+Usage is provided under the [MIT License](http://http://opensource.org/licenses/mit-license.php).  See LICENSE for the full details.
