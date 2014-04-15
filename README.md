@@ -11,7 +11,7 @@ If items on a row have different heights, the row will get the same height as th
 
 Using YBTopAlignedCollectionViewFlowLayout is very easy:
 
-Add the pod `YBTopAlignedCollectionViewFlowLayout` (not available yet) to your Podfile or manually download the files and add them to your project.
+Add the pod `YBTopAlignedCollectionViewFlowLayout` to your Podfile or manually download the files and add them to your project.
 
 ```objc
 #import "YBTopAlignedCollectionViewFlowLayout.h"
